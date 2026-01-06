@@ -56,8 +56,6 @@ const Skills = () => {
               }}
               whileHover={{ 
                 scale: 1.05, 
-                backgroundColor: 'var(--card-hover-bg)',
-                borderColor: 'var(--card-hover-border)',
                 transition: { duration: 0.2, delay: 0 }
               }}
               className={styles.logoCard}
