@@ -1,0 +1,160 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 5%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  padding: 16px 5%;
+  background: rgba(var(--bg-primary-rgb), 0.8); /* We need to handle this opacity, but let's use glass-bg variant or variables */
+  background: var(--bg-primary); /* Fallback */
+  background: color-mix(in srgb, var(--bg-primary), transparent 20%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Since I didn't define rgb vars, let's use the semantic names directly. */
+.scrolled {
+  padding: 16px 5%;
+  background: var(--bg-primary); /* For now opaqueish or use glass-bg if supported */
+  background: var(--glass-bg); /* Use global glass variable */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+}
+
+.navContent {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--text-primary);
+}
+
+.themeToggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.themeToggle:hover {
+    background: var(--glass-shine);
+}
+
+/* Menu Button - Hidden on desktop by default */
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  z-index: 1002;
+}
+
+.menuBtn:hover {
+  background: var(--glass-shine);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-primary); /* Or glass background */
+  backdrop-filter: blur(20px);
+  padding: 100px 5% 40px; /* Top padding to clear navbar */
+  z-index: 1001; /* Above navbar background, below button (1002) */
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.mobileLinks a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobileLinks a:hover {
+  color: var(--accent-purple);
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navContent {
+    gap: 16px;
+  }
+  
+  .nav {
+    padding: 16px 5%;
+    background: var(--bg-primary); /* Ensure background is solid or consistent on mobile */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+  }
+}

@@ -1,0 +1,57 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.countWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.count {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: white;
+  letter-spacing: -2px;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #666;
+  font-weight: 600;
+}
+
+.bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent-purple);
+  width: 0%;
+}
+
+@media (max-width: 768px) {
+  .count {
+    font-size: 5rem;
+  }
+}
