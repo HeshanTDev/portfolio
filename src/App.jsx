@@ -13,6 +13,20 @@ import './App.css'
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
   return (
     <div className="app-container">
@@ -26,7 +40,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          <Navbar />
+          <Navbar theme={theme} toggleTheme={toggleTheme} />
           <Hero />
           <About />
           <Skills />
