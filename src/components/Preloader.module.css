@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding: 20px;
 }
 
 .countWrapper {
@@ -34,6 +35,7 @@
 
 .bar {
   width: 200px;
+  max-width: 80vw;
   height: 2px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 40px;
@@ -52,6 +54,32 @@
 
 @media (max-width: 768px) {
   .count {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .bar {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .count {
+    font-size: 3rem;
+  }
+
+  .label {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .bar {
+    width: 60%;
   }
 }
