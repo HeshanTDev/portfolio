@@ -16,6 +16,8 @@
   
   --card-bg: rgba(255, 255, 255, 0.02);
   --card-border: rgba(255, 255, 255, 0.05);
+  --card-hover-bg: rgba(255, 255, 255, 0.06);
+  --card-hover-border: var(--accent-purple);
 
   /* Legacy aliases mapped to semantic names */
   --bg-black: var(--bg-primary);
@@ -47,6 +49,8 @@
   
   --card-bg: rgba(0, 0, 0, 0.02);
   --card-border: rgba(0, 0, 0, 0.06);
+  --card-hover-bg: rgba(124, 58, 237, 0.08);
+  --card-hover-border: var(--accent-purple);
 
   color-scheme: light;
 }
